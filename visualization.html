@@ -1,0 +1,1386 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Visualizing &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'visualization';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="basics of Python" href="pythonBasic1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to pyPsy
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Notice.html">Legal Notice and Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pythonBasic1.html">basics of Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Visualizing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/visualization.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Visualizing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-of-visualizing-using-python">goal of visualizing using python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">seaborn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-libraries">installing libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-datset-to-work-with">importing datset to work with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-of-mpg">MetaData of mpg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-matplotlib">using matplotlib</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-style-class">using style=’class’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-hue">what is <code class="docutils literal notranslate"><span class="pre">hue</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sns-facetgrid">sns.facetgrid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot-drv-vs-cyl">Scatter Plot: drv vs. cyl</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-facet-grid-plot-with-drv-on-the-rows-and-cyl-on-the-columns">Creating a facet grid plot with drv on the rows and cyl on the columns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn-lmplot">seaborn.lmplot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#markers">markers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-charts">Bar charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#styling-box-plot">styling box plot</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="visualizing">
+<h1>Visualizing<a class="headerlink" href="#visualizing" title="Permalink to this heading">#</a></h1>
+<section id="goal-of-visualizing-using-python">
+<h2>goal of visualizing using python<a class="headerlink" href="#goal-of-visualizing-using-python" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>to understand the data</p></li>
+<li><p>to communicate the data</p></li>
+</ul>
+</section>
+<section id="libraries">
+<h2>libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>matplotlib</p></li>
+<li><p>seaborn</p></li>
+<li><p>plotly</p></li>
+<li><p>bokeh</p></li>
+</ul>
+<p>in this course we will focus on <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, you may are interested in others such as <code class="docutils literal notranslate"><span class="pre">plotly</span></code> and <code class="docutils literal notranslate"><span class="pre">bokeh</span></code> for interactive visualizations.</p>
+</section>
+<section id="matplotlib">
+<h2>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>the most popular plotting library in python</p></li>
+<li><p>designed to have a similar feel to MATLAB’s graphical plotting</p></li>
+<li><p>works well with numpy and pandas</p></li>
+</ul>
+</section>
+<section id="seaborn">
+<h2>seaborn<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>based on matplotlib</p></li>
+<li><p>provides a high-level interface for drawing attractive statistical graphics</p></li>
+</ul>
+</section>
+<section id="installing-libraries">
+<h2>installing libraries<a class="headerlink" href="#installing-libraries" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install matplotlib
+<span class="o">%</span><span class="k">pip</span> install seaborn
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (3.7.1)
+Requirement already satisfied: contourpy&gt;=1.0.1 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (1.0.7)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (4.39.4)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (1.4.4)
+Requirement already satisfied: numpy&gt;=1.20 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (1.24.3)
+Requirement already satisfied: packaging&gt;=20.0 in c:\users\khoda\appdata\roaming\python\python311\site-packages (from matplotlib) (23.1)
+Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (9.5.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib) (3.0.9)
+Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\khoda\appdata\roaming\python\python311\site-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: six&gt;=1.5 in c:\users\khoda\appdata\roaming\python\python311\site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.16.0)
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: seaborn in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (0.12.2)
+Requirement already satisfied: numpy!=1.24.0,&gt;=1.17 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from seaborn) (1.24.3)
+Requirement already satisfied: pandas&gt;=0.25 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from seaborn) (2.0.1)
+Requirement already satisfied: matplotlib!=3.6.1,&gt;=3.1 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from seaborn) (3.7.1)
+Requirement already satisfied: contourpy&gt;=1.0.1 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (1.0.7)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (0.11.0)
+Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (4.39.4)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (1.4.4)
+Requirement already satisfied: packaging&gt;=20.0 in c:\users\khoda\appdata\roaming\python\python311\site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (23.1)
+Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (9.5.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (3.0.9)
+Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\khoda\appdata\roaming\python\python311\site-packages (from matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from pandas&gt;=0.25-&gt;seaborn) (2023.3)
+Requirement already satisfied: tzdata&gt;=2022.1 in c:\users\khoda\appdata\local\programs\python\python311\lib\site-packages (from pandas&gt;=0.25-&gt;seaborn) (2023.3)
+Requirement already satisfied: six&gt;=1.5 in c:\users\khoda\appdata\roaming\python\python311\site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib!=3.6.1,&gt;=3.1-&gt;seaborn) (1.16.0)
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span>
+<span class="kn">import</span> <span class="nn">seaborn</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importing-datset-to-work-with">
+<h2>importing datset to work with<a class="headerlink" href="#importing-datset-to-work-with" title="Permalink to this heading">#</a></h2>
+<p>data we use here is named ‘mpg’ which can be downloaded from <a class="reference download internal" download="" href="_downloads/84355cad47654e61474b366a67a2e6b7/mpg.csv"><span class="xref download myst">here</span></a>.</p>
+<p>the easiest way to import data is to use pandas library:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">mpg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/mpg.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>now before starting plotting some data, lets look at the data:
+we can take look at data by looking at first 5 rows of it using <code class="docutils literal notranslate"><span class="pre">head()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>manufacturer</th>
+      <th>model</th>
+      <th>displ</th>
+      <th>year</th>
+      <th>cyl</th>
+      <th>trans</th>
+      <th>drv</th>
+      <th>cty</th>
+      <th>hwy</th>
+      <th>fl</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>1.8</td>
+      <td>1999</td>
+      <td>4</td>
+      <td>auto(l5)</td>
+      <td>f</td>
+      <td>18</td>
+      <td>29</td>
+      <td>p</td>
+      <td>compact</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>1.8</td>
+      <td>1999</td>
+      <td>4</td>
+      <td>manual(m5)</td>
+      <td>f</td>
+      <td>21</td>
+      <td>29</td>
+      <td>p</td>
+      <td>compact</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>2.0</td>
+      <td>2008</td>
+      <td>4</td>
+      <td>manual(m6)</td>
+      <td>f</td>
+      <td>20</td>
+      <td>31</td>
+      <td>p</td>
+      <td>compact</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>2.0</td>
+      <td>2008</td>
+      <td>4</td>
+      <td>auto(av)</td>
+      <td>f</td>
+      <td>21</td>
+      <td>30</td>
+      <td>p</td>
+      <td>compact</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>audi</td>
+      <td>a4</td>
+      <td>2.8</td>
+      <td>1999</td>
+      <td>6</td>
+      <td>auto(l5)</td>
+      <td>f</td>
+      <td>16</td>
+      <td>26</td>
+      <td>p</td>
+      <td>compact</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="metadata-of-mpg">
+<h2>MetaData of mpg<a class="headerlink" href="#metadata-of-mpg" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">displ</span></code> shows the car’s engine size in liters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hwy</span></code> shows the car’s fuel efficiency on highways in miles per gallon</p></li>
+</ul>
+</section>
+<section id="scatter-plot">
+<span id="vis-scatter-plot"></span><h2>Scatter plot<a class="headerlink" href="#scatter-plot" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>a <a class="reference internal" href="#vis-scatter-plot"><span class="std std-ref">scatter plot</span></a> is a type of plot that shows the data as a collection of points</p></li>
+<li><p>the position of a point depends on its two-dimensional value, where each value is a position on either the horizontal or vertical dimension</p></li>
+<li><p>scatter plots are used to observe relationships between variables</p></li>
+</ul>
+<section id="using-matplotlib">
+<h3>using matplotlib<a class="headerlink" href="#using-matplotlib" title="Permalink to this heading">#</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>if you are using Jupyter notebook as your IDE, you can skip <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> and the plot will be displayed automatically</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;displ&#39;</span><span class="p">],</span> <span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;hwy&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7c5f6054564924593b19289a68a75822d514340772bf79917ccffe545500d9a0.png" src="_images/7c5f6054564924593b19289a68a75822d514340772bf79917ccffe545500d9a0.png" />
+</div>
+</div>
+<p>or you may use seaborn format of coing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/439d3c35cb82b50ac8ae79ad7f0587eb29ba19f859b3cba0bce6e1ac624847ac.png" src="_images/439d3c35cb82b50ac8ae79ad7f0587eb29ba19f859b3cba0bce6e1ac624847ac.png" />
+</div>
+</div>
+<p>the command <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> is used to show the plot, without it the plot will not be shown.</p>
+<p>in this format you have option not to choose just a speicif, you can plot all the data in the dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;cyl&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3641885ed6dfe3f06081eea915c50fb0bb036632409de607d03cede2421277fd.png" src="_images/3641885ed6dfe3f06081eea915c50fb0bb036632409de607d03cede2421277fd.png" />
+</div>
+</div>
+<p>Let’s hypothesize that the cars are hybrids. One way to test this hypothesis is to look at the <code class="docutils literal notranslate"><span class="pre">hue</span></code> value for each car.
+<code class="docutils literal notranslate"><span class="pre">Hue</span></code> can be used to group to multiple data variable and show the dependency of the passed data values are to be plotted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8cfd3fc83baee885fd7f6b10654524295526e6c69f39b582f511cca613b18a80.png" src="_images/8cfd3fc83baee885fd7f6b10654524295526e6c69f39b582f511cca613b18a80.png" />
+</div>
+</div>
+</section>
+<section id="using-style-class">
+<h3>using style=’class’<a class="headerlink" href="#using-style-class" title="Permalink to this heading">#</a></h3>
+<p>style in seaborn Grouping variable that will produce points with different markers. Can have a numeric dtype but will always be treated as categorical.
+for example lets plot this  data in mpg based on their car classes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/248f6475b61f00054bc4e8c4214cbdf6d271ae9261d2f01bcb62df27d44732a9.png" src="_images/248f6475b61f00054bc4e8c4214cbdf6d271ae9261d2f01bcb62df27d44732a9.png" />
+</div>
+</div>
+<p>or if you are interested to make it more fancy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ffe0f65b02e57dbea867219f768551f04912d463357ce361acfef1c3126714cb.png" src="_images/ffe0f65b02e57dbea867219f768551f04912d463357ce361acfef1c3126714cb.png" />
+</div>
+</div>
+<p>this way you can see the difference between the <code class="docutils literal notranslate"><span class="pre">classes</span></code> and based on <code class="docutils literal notranslate"><span class="pre">hue</span></code></p>
+</section>
+<section id="what-is-hue">
+<h3>what is <code class="docutils literal notranslate"><span class="pre">hue</span></code><a class="headerlink" href="#what-is-hue" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">hue</span></code> is a parameter in seaborn scatter plot that is used to Grouping variable that will produce points with different colors. Can be either categorical or numeric, although color mapping will behave differently in latter case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1d59a61df68394984e9e38b488b5c3bf4275ae5315addba1d502f8fadab2bb2b.png" src="_images/1d59a61df68394984e9e38b488b5c3bf4275ae5315addba1d502f8fadab2bb2b.png" />
+</div>
+</div>
+<p>This code is used to change the color of dots to blue, you may use other colors as well.
+for example lets make them orange</p>
+<p>sns.scatterplot(data=mpg, x=’displ’, y=’hwy’, color=’orange’)
+plt.show()</p>
+</section>
+</section>
+<section id="sns-facetgrid">
+<h2>sns.facetgrid<a class="headerlink" href="#sns-facetgrid" title="Permalink to this heading">#</a></h2>
+<p>facetgrid is a Multi-plot grid for plotting conditional relationships. This class maps a dataset onto multiple axes arrayed in a grid of rows and columns that correspond to levels of variables in the dataset. The plots it produces are often called “lattice”, “trellis”, or “small-multiple” graphics.
+It can also represent levels of a third variable with the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter, which plots different subsets of data in different colors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map_dataframe</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4cccb6cf41f970bd3ca9dbb23adcd81e034fafbc06da2b057a514b804a5b318f.png" src="_images/4cccb6cf41f970bd3ca9dbb23adcd81e034fafbc06da2b057a514b804a5b318f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s1">&#39;drv&#39;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;cyl&#39;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map_dataframe</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5daecec7501bd5d48a4796a22d9328364d99c890b1611121000d4ab1d8086773.png" src="_images/5daecec7501bd5d48a4796a22d9328364d99c890b1611121000d4ab1d8086773.png" />
+</div>
+</div>
+<p>The given code is creating a grid of scatter plots using the seaborn library in Python.</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">sns.FacetGrid(data=mpg,</span> <span class="pre">row='drv',</span> <span class="pre">col='cyl')</span></code></p>
+<ul class="simple">
+<li><p>This line initializes a FacetGrid object called ‘g’.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter specifies the dataset ‘mpg’ that will be used for plotting.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">row</span></code> parameter specifies that the rows of the grid will be determined by the unique values in the ‘drv’ column of the dataset.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">col</span></code> parameter specifies that the columns of the grid will be determined by the unique values in the ‘cyl’ column of the dataset.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g.map_dataframe(sns.scatterplot,</span> <span class="pre">x='displ',</span> <span class="pre">y='hwy')</span></code></p>
+<ul class="simple">
+<li><p>This line maps a scatter plot onto the FacetGrid ‘g’.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">sns.scatterplot</span></code> function is used to create the scatter plot.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">x</span></code> parameter specifies that the ‘displ’ column will be plotted on the x-axis.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">y</span></code> parameter specifies that the ‘hwy’ column will be plotted on the y-axis.</p></li>
+</ul>
+</li>
+</ol>
+<p>Overall, this code generates a grid of scatter plots where each subplot represents a different combination of ‘drv’ and ‘cyl’ values from the ‘mpg’ dataset. The scatter plots in each subplot show the relationship between ‘displ’ (engine displacement) on the x-axis and ‘hwy’ (highway miles per gallon) on the y-axis for the corresponding ‘drv’ and ‘cyl’ values.</p>
+</section>
+<section id="scatter-plot-drv-vs-cyl">
+<h2>Scatter Plot: drv vs. cyl<a class="headerlink" href="#scatter-plot-drv-vs-cyl" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;drv&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;cyl&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b150c509d8bc1792c47c5d05862a37a241ad0ddb630565dea604c1ef33a98c57.png" src="_images/b150c509d8bc1792c47c5d05862a37a241ad0ddb630565dea604c1ef33a98c57.png" />
+</div>
+</div>
+<p>In this part of the code, a scatter plot is generated using the seaborn library. The function sns.scatterplot creates a scatter plot with ‘drv’ (drive type) on the x-axis and ‘cyl’ (number of cylinders) on the y-axis, using the ‘mpg’ dataset. The plot is displayed using <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>.</p>
+<section id="creating-a-facet-grid-plot-with-drv-on-the-rows-and-cyl-on-the-columns">
+<h3>Creating a facet grid plot with drv on the rows and cyl on the columns<a class="headerlink" href="#creating-a-facet-grid-plot-with-drv-on-the-rows-and-cyl-on-the-columns" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s1">&#39;drv&#39;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;cyl&#39;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map_dataframe</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;drv&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;cyl&#39;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/322b65e4899ac1b8cebbed5ea99ab284701c40a4427ff1e6771bf808ab767b73.png" src="_images/322b65e4899ac1b8cebbed5ea99ab284701c40a4427ff1e6771bf808ab767b73.png" />
+</div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">sns.FacetGrid</span></code> initializes a grid object <code class="docutils literal notranslate"><span class="pre">g</span></code> with rows determined by the unique values in the ‘drv’ column and columns determined by the unique values in the ‘cyl’ column of the ‘mpg’ dataset.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">g.map_dataframe</span></code> function is used to map scatter plots onto each cell of the facet grid, with ‘drv’ on the x-axis and ‘cyl’ on the y-axis. The <code class="docutils literal notranslate"><span class="pre">g.add_legend()</span></code> function adds a legend to the grid, and the plot is displayed using <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>.</p>
+</section>
+</section>
+<section id="seaborn-lmplot">
+<h2>seaborn.lmplot<a class="headerlink" href="#seaborn-lmplot" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">lmplot</span></code> is a function in seaborn that is used to draw a scatter plot of two variables with a linear regression line. This function combines <code class="docutils literal notranslate"><span class="pre">regplot()</span></code> and <code class="docutils literal notranslate"><span class="pre">FacetGrid</span></code>. It is intended as a convenient interface to fit regression models across conditional subsets of a dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8dc86d2d59a28b19fbebafd0afc093209938bbca02a26333c6221da20860ace9.png" src="_images/8dc86d2d59a28b19fbebafd0afc093209938bbca02a26333c6221da20860ace9.png" />
+</div>
+</div>
+<p>as we already used <code class="docutils literal notranslate"><span class="pre">hue</span></code>. lets try use a different markers for this plot.</p>
+<section id="markers">
+<h3>markers<a class="headerlink" href="#markers" title="Permalink to this heading">#</a></h3>
+<p>markers is a parameter in seaborn scatter plot that is used to change the markers for different categorical levels of the hue variable. This parameter is only used if hue is a categorical variable.</p>
+<p>markers are usually a list of string or a list of tuples. For example, if the hue variable has three levels, the list of markers should have three elements. If the hue variable has four levels, the list of markers should have four elements, and so on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;drv&#39;</span><span class="p">,</span> <span class="n">markers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/854a39214b213d03bde1af82c23b8172dcade7129806e3bd9ae749c267a69995.png" src="_images/854a39214b213d03bde1af82c23b8172dcade7129806e3bd9ae749c267a69995.png" />
+</div>
+</div>
+<p>The code snippet <code class="docutils literal notranslate"><span class="pre">markers=[&quot;o&quot;,</span> <span class="pre">&quot;s&quot;,</span> <span class="pre">&quot;d&quot;]</span></code> is used to customize the marker styles in a scatter plot.</p>
+<ul class="simple">
+<li><p>“o”: This marker style represents a circle marker. It’s a common marker style for scatter plots and represents individual data points as circular dots.</p></li>
+<li><p>“s”: This marker style represents a square marker. It’s another common marker style used to display data points as square-shaped marks on the plot.</p></li>
+<li><p>“d”: This marker style represents a diamond marker. It’s less common than circles and squares, but it provides a distinctive shape for data points.</p></li>
+</ul>
+<p>These marker styles are often used to differentiate between data points belonging to different categories or groups. By specifying these marker styles, you can create scatter plots with varied visual representations for data points based on their respective categories.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;displ&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hwy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d6c305ba93b1967e68a541e12a4014a8f57634644ad265e6bfae7c0b588bf6ad.png" src="_images/d6c305ba93b1967e68a541e12a4014a8f57634644ad265e6bfae7c0b588bf6ad.png" />
+</div>
+</div>
+<p>following code The plot shows a scatter plot of individual data points, and a linear regression line is fitted through the data points to show the general trend.</p>
+</section>
+<section id="bar-charts">
+<h3>Bar charts<a class="headerlink" href="#bar-charts" title="Permalink to this heading">#</a></h3>
+<p>bar charts are simple but they are amazingly full of information, and they are very easy to understand. They are used to show the distribution of a categorical variable. They are also used to compare between different categories.</p>
+<p>Let’s first look at the code to create a bar chart using the seaborn library.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=&lt;</span><span class="n">Data</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>this is the easiest way to create a bar chart using the seaborn library. The <code class="docutils literal notranslate"><span class="pre">sns.barplot</span></code> function takes in the following parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>: This parameter specifies the dataset that will be used for plotting.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>: This parameter specifies the column in the dataset that will be plotted on the x-axis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code>: This parameter specifies the column in the dataset that will be plotted on the y-axis.</p></li>
+</ul>
+<p>the dataset contains ~54000 rows and 10 columns. most common coloumns are <code class="docutils literal notranslate"><span class="pre">price</span></code>, <code class="docutils literal notranslate"><span class="pre">carat</span></code>, <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">clarity</span></code>, and <code class="docutils literal notranslate"><span class="pre">cut</span></code>.
+First, let’s remember how to import data from a CSV file using the pandas library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">diamonds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/diamonds.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and now that it is imported, we have given it a name which is “diamond” and we can use it to create a bar chart.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ffd2445fbccd07fc856be390434e4c01b090304168faee95c97f0d16092d3867.png" src="_images/ffd2445fbccd07fc856be390434e4c01b090304168faee95c97f0d16092d3867.png" />
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>we used <code class="docutils literal notranslate"><span class="pre">countplot</span></code> instead of <code class="docutils literal notranslate"><span class="pre">barplot</span></code> because we are counting the number of diamonds in each category. If we used <code class="docutils literal notranslate"><span class="pre">barplot</span></code>, it would have calculated the average price of diamonds in each category.</p>
+</div>
+<p>As the last time we also here can use <code class="docutils literal notranslate"><span class="pre">hue</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;clarity&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/cfe62fe14c9e5cd8a64c9a4b82f46478436cd2090a94977ae85fee6b4c40ae31.png" src="_images/cfe62fe14c9e5cd8a64c9a4b82f46478436cd2090a94977ae85fee6b4c40ae31.png" />
+</div>
+</div>
+<p>we can pass argument <code class="docutils literal notranslate"><span class="pre">doge</span></code> to change the color of the bars.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;clarity&quot;</span><span class="p">,</span> <span class="n">dodge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/cfe62fe14c9e5cd8a64c9a4b82f46478436cd2090a94977ae85fee6b4c40ae31.png" src="_images/cfe62fe14c9e5cd8a64c9a4b82f46478436cd2090a94977ae85fee6b4c40ae31.png" />
+</div>
+</div>
+<p>to understand the difference between <code class="docutils literal notranslate"><span class="pre">dodge</span></code> and <code class="docutils literal notranslate"><span class="pre">hue</span></code> we can use the following code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">diamonds</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;cut&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;clarity&quot;</span><span class="p">,</span> <span class="n">dodge</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/50e578ff0171c7e91a6b620648d847325d16eb1cfd56aa9748877948238791af.png" src="_images/50e578ff0171c7e91a6b620648d847325d16eb1cfd56aa9748877948238791af.png" />
+</div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>as you can see, we used <code class="docutils literal notranslate"><span class="pre">countplot</span></code> to visualise data, it is because <code class="docutils literal notranslate"><span class="pre">countplot</span></code> is the best way to show this data.</p>
+</div>
+<p>box plot helps you to understand distribution of data and also by showing the outlier data</p>
+<p>seaborn has an interal dataset named <code class="docutils literal notranslate"><span class="pre">mpg</span></code> which you can easily load it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;mpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>we also can <code class="docutils literal notranslate"><span class="pre">set_style</span></code> to change the style of the plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>or maybe if you like use <code class="docutils literal notranslate"><span class="pre">whitegrid</span></code> or <code class="docutils literal notranslate"><span class="pre">white</span></code></p>
+<p>before continue let’s take a look at the <code class="docutils literal notranslate"><span class="pre">mpg</span></code> dataset. by typing <code class="docutils literal notranslate"><span class="pre">mpg.columns</span></code> we can see the columns of the dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;mpg&#39;, &#39;cylinders&#39;, &#39;displacement&#39;, &#39;horsepower&#39;, &#39;weight&#39;,
+       &#39;acceleration&#39;, &#39;model_year&#39;, &#39;origin&#39;, &#39;name&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>so we have bunch of columns and we can use them to create a box plot.</p>
+<p>again before we continue, let’s take a look at the cars cylinders.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="o">.</span><span class="n">cylinders</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cylinders
+4    204
+8    103
+6     84
+3      4
+5      3
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>note that <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> is a function that counts the number of occurrences of each value in a column.</p>
+<p>as you can see, we have different number of cylinders. we have 3, 4, 5, 6, and 8 cylinders. we can use this column to create a box plot.</p>
+<p>let’s for now, just focus on 4,6, and 8 cylinders. Also this is a good practice to filter data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filtered</span> <span class="o">=</span> <span class="n">mpg</span><span class="p">[</span><span class="n">mpg</span><span class="o">.</span><span class="n">cylinders</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>now we have filtered it into our needed cylinders.</p>
+<p>now we have data, lets plot a box plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">filtered</span><span class="o">.</span><span class="n">mpg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/070e45bbe6726829a3dbfa2e44bf5cd4da37f99fbdbe2fc2b18d33b1c5aaa9a9.png" src="_images/070e45bbe6726829a3dbfa2e44bf5cd4da37f99fbdbe2fc2b18d33b1c5aaa9a9.png" />
+</div>
+</div>
+<p>using <code class="docutils literal notranslate"><span class="pre">sns.boxplot</span></code> we can create a box plot. the <code class="docutils literal notranslate"><span class="pre">data</span></code> parameter is the data that we want to plot. in this case, we are plotting the <code class="docutils literal notranslate"><span class="pre">mpg</span></code> column of the <code class="docutils literal notranslate"><span class="pre">filtered</span></code> dataset.</p>
+<p>to verify the plot, you may run a descriptive statistics for the <code class="docutils literal notranslate"><span class="pre">mpg</span></code> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filtered</span><span class="o">.</span><span class="n">mpg</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    391.000000
+mean      23.515345
+std        7.847549
+min        9.000000
+25%       17.000000
+50%       23.000000
+75%       29.000000
+max       46.600000
+Name: mpg, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>as you can see, the box plot is correct. the minimum value is 9.0, the maximum value is 46, the median is 23.0, the first quartile is 17.0, and the third quartile is 30.9.</p>
+<p>we may use categories in the boxplot, for example lets for now use <code class="docutils literal notranslate"><span class="pre">car.origin</span></code> as <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">cars.mpg</span></code> as <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">filtered</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;origin&#39;, ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/7f5dc7857c78504b1fe2f574c52baab2a3d5c3f36adcb0b796ab56e43703de96.png" src="_images/7f5dc7857c78504b1fe2f574c52baab2a3d5c3f36adcb0b796ab56e43703de96.png" />
+</div>
+</div>
+<p>so we have categorised data based on the origin of the cars, as the USA, Japan, and Europe.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>you can use alternative code to do the same plot</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">filtered</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">filtered</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">filtered</span><span class="o">.</span><span class="n">mpg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;origin&#39;, ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/7f5dc7857c78504b1fe2f574c52baab2a3d5c3f36adcb0b796ab56e43703de96.png" src="_images/7f5dc7857c78504b1fe2f574c52baab2a3d5c3f36adcb0b796ab56e43703de96.png" />
+</div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>we may call a data which belongs to a specific group in different ways, for example we can call <code class="docutils literal notranslate"><span class="pre">filtered.origin</span></code> also by filtered[‘origin’].</p>
+</div>
+<p>you remember that we used <code class="docutils literal notranslate"><span class="pre">hue</span></code> in the bar chart, we can use it here too.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">filtered</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;cylinders&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;origin&#39;, ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/f0eb628d82756560711c8bc30ab65aaec30f0fffbcdd0b52673c5560fafdd790.png" src="_images/f0eb628d82756560711c8bc30ab65aaec30f0fffbcdd0b52673c5560fafdd790.png" />
+</div>
+</div>
+<p>you may create your own categoty for example, I would like to call card before 1980 as old and after 1980 as new.</p>
+<p>but let’s first take a look at the <code class="docutils literal notranslate"><span class="pre">model_year</span></code> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filtered</span><span class="o">.</span><span class="n">model_year</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>model_year
+73    39
+78    35
+76    34
+82    31
+75    30
+70    29
+81    29
+71    28
+79    28
+72    27
+74    27
+77    27
+80    27
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>as you can see, we have cars from 1970 to 1982. so we can use this column to create a new column called <code class="docutils literal notranslate"><span class="pre">age</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filtered</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">filtered</span><span class="o">.</span><span class="n">model_year</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;old&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1980</span> <span class="k">else</span> <span class="s1">&#39;new&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\khoda\AppData\Local\Temp\ipykernel_2704\2723310808.py:1: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  filtered[&#39;new&#39;] = filtered.model_year.apply(lambda x: &#39;old&#39; if x &lt; 1980 else &#39;new&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>the above code also can be run like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filtered</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">filtered</span><span class="o">.</span><span class="n">model_year</span> <span class="o">&lt;</span> <span class="mi">80</span>
+</pre></div>
+</div>
+</div>
+<p>this code returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the car is before 1980 and <code class="docutils literal notranslate"><span class="pre">False</span></code> if the car is after 1980.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">filtered</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;origin&#39;, ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/a035a3b3167c206cc35e9b49679b93d6305948500ac2863a1480d3143442b025.png" src="_images/a035a3b3167c206cc35e9b49679b93d6305948500ac2863a1480d3143442b025.png" />
+</div>
+</div>
+<p>funny! so lets do it with whole dataset not just filtered one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mpg</span><span class="o">.</span><span class="n">model_year</span> <span class="o">&lt;</span> <span class="mi">76</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;origin&#39;, ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/80f6a025fad8199a91deca25ef8c2231a3f6a73ef99d0f013f1a49cbf3746029.png" src="_images/80f6a025fad8199a91deca25ef8c2231a3f6a73ef99d0f013f1a49cbf3746029.png" />
+</div>
+</div>
+</section>
+<section id="styling-box-plot">
+<h3>styling box plot<a class="headerlink" href="#styling-box-plot" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>if you would like to have different horizontal form or vertical, just change parameter places.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;mpg&#39;, ylabel=&#39;origin&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/9c014cb1d05e5c05f9eebd7df2eccc166253108d4df62a10a98f50ea6ae3885b.png" src="_images/9c014cb1d05e5c05f9eebd7df2eccc166253108d4df62a10a98f50ea6ae3885b.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>to change the order of data, you can use <code class="docutils literal notranslate"><span class="pre">order</span></code> parameter.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;japan&#39;</span><span class="p">,</span> <span class="s1">&#39;usa&#39;</span><span class="p">,</span> <span class="s1">&#39;europe&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;mpg&#39;, ylabel=&#39;origin&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/97267519af6b46eb5cdbd9a5893b1bb85f43be6272f8e8590302af2eb5d94c28.png" src="_images/97267519af6b46eb5cdbd9a5893b1bb85f43be6272f8e8590302af2eb5d94c28.png" />
+</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Be careful, in coding <code class="docutils literal notranslate"><span class="pre">europe</span></code> is not the same as <code class="docutils literal notranslate"><span class="pre">Europe</span></code>.</p>
+</div>
+<ul class="simple">
+<li><p>if you would like to change <code class="docutils literal notranslate"><span class="pre">hue</span></code> order, you can use <code class="docutils literal notranslate"><span class="pre">hue_order</span></code> parameter.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;japan&#39;</span><span class="p">,</span> <span class="s1">&#39;usa&#39;</span><span class="p">,</span> <span class="s1">&#39;europe&#39;</span><span class="p">],</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;mpg&#39;, ylabel=&#39;origin&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/97267519af6b46eb5cdbd9a5893b1bb85f43be6272f8e8590302af2eb5d94c28.png" src="_images/97267519af6b46eb5cdbd9a5893b1bb85f43be6272f8e8590302af2eb5d94c28.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>if you have specific color for each category, you can use <code class="docutils literal notranslate"><span class="pre">color</span></code> parameter.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;japan&#39;</span><span class="p">,</span> <span class="s1">&#39;usa&#39;</span><span class="p">,</span> <span class="s1">&#39;europe&#39;</span><span class="p">],</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;mpg&#39;, ylabel=&#39;origin&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/a87b8fadf4778ce7d27f7806225bb33a384a13653dd53297a2845bb778055e3d.png" src="_images/a87b8fadf4778ce7d27f7806225bb33a384a13653dd53297a2845bb778055e3d.png" />
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>here we used <code class="docutils literal notranslate"><span class="pre">g</span></code> as green.</p>
+</div>
+<ul class="simple">
+<li><p>you can change width of the box plot by <code class="docutils literal notranslate"><span class="pre">width</span></code> parameter.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;japan&#39;</span><span class="p">,</span> <span class="s1">&#39;usa&#39;</span><span class="p">,</span> <span class="s1">&#39;europe&#39;</span><span class="p">],</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;mpg&#39;, ylabel=&#39;origin&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/f6b004eb050fa59a6ed53f4ea672083550a6fadfb6f0b8fd046b8f2da40ab518.png" src="_images/f6b004eb050fa59a6ed53f4ea672083550a6fadfb6f0b8fd046b8f2da40ab518.png" />
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>default value is 0.8</p>
+</div>
+<ul class="simple">
+<li><p>you can change the width of the line around the box by <code class="docutils literal notranslate"><span class="pre">linewidth</span></code> parameter.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>default value is 1.5</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;origin&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;japan&#39;</span><span class="p">,</span> <span class="s1">&#39;usa&#39;</span><span class="p">,</span> <span class="s1">&#39;europe&#39;</span><span class="p">],</span> <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;mpg&#39;, ylabel=&#39;origin&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/6c58ec7eb699047a1adf1f38fc7bd11c4490c6eccf820d913adc801d918bdcd0.png" src="_images/6c58ec7eb699047a1adf1f38fc7bd11c4490c6eccf820d913adc801d918bdcd0.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pythonBasic1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">basics of Python</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-of-visualizing-using-python">goal of visualizing using python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">seaborn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-libraries">installing libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-datset-to-work-with">importing datset to work with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-of-mpg">MetaData of mpg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-matplotlib">using matplotlib</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-style-class">using style=’class’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-hue">what is <code class="docutils literal notranslate"><span class="pre">hue</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sns-facetgrid">sns.facetgrid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot-drv-vs-cyl">Scatter Plot: drv vs. cyl</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-facet-grid-plot-with-drv-on-the-rows-and-cyl-on-the-columns">Creating a facet grid plot with drv on the rows and cyl on the columns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn-lmplot">seaborn.lmplot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#markers">markers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-charts">Bar charts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#styling-box-plot">styling box plot</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
