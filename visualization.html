@@ -306,25 +306,27 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-of-visualizing-using-python">goal of visualizing using python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">matplotlib</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">seaborn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">libraries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">matplotlib</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">seaborn</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-libraries">installing libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-datset-to-work-with">importing datset to work with</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-of-mpg">MetaData of mpg</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter plot</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-matplotlib">using matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-datset-to-work-with">importing datset to work with</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-of-mpg">MetaData of mpg</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-matplotlib">using matplotlib</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-style-class">using style=’class’</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-hue">what is <code class="docutils literal notranslate"><span class="pre">hue</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sns-facetgrid">sns.facetgrid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot-drv-vs-cyl">Scatter Plot: drv vs. cyl</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sns-facetgrid">sns.facetgrid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot-drv-vs-cyl">Scatter Plot: drv vs. cyl</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-facet-grid-plot-with-drv-on-the-rows-and-cyl-on-the-columns">Creating a facet grid plot with drv on the rows and cyl on the columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn-lmplot">seaborn.lmplot</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#markers">markers</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn-lmplot">seaborn.lmplot</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#markers">markers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-charts">Bar charts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#styling-box-plot">styling box plot</a></li>
 </ul>
@@ -358,9 +360,8 @@ document.write(`
 <li><p>bokeh</p></li>
 </ul>
 <p>in this course we will focus on <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, you may are interested in others such as <code class="docutils literal notranslate"><span class="pre">plotly</span></code> and <code class="docutils literal notranslate"><span class="pre">bokeh</span></code> for interactive visualizations.</p>
-</section>
 <section id="matplotlib">
-<h2>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h2>
+<h3>matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>the most popular plotting library in python</p></li>
 <li><p>designed to have a similar feel to MATLAB’s graphical plotting</p></li>
@@ -368,11 +369,12 @@ document.write(`
 </ul>
 </section>
 <section id="seaborn">
-<h2>seaborn<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h2>
+<h3>seaborn<a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>based on matplotlib</p></li>
 <li><p>provides a high-level interface for drawing attractive statistical graphics</p></li>
 </ul>
+</section>
 </section>
 <section id="installing-libraries">
 <h2>installing libraries<a class="headerlink" href="#installing-libraries" title="Permalink to this heading">#</a></h2>
@@ -562,13 +564,13 @@ we can take look at data by looking at first 5 rows of it using <code class="doc
 </table>
 </div></div></div>
 </div>
-</section>
 <section id="metadata-of-mpg">
-<h2>MetaData of mpg<a class="headerlink" href="#metadata-of-mpg" title="Permalink to this heading">#</a></h2>
+<h3>MetaData of mpg<a class="headerlink" href="#metadata-of-mpg" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">displ</span></code> shows the car’s engine size in liters</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">hwy</span></code> shows the car’s fuel efficiency on highways in miles per gallon</p></li>
 </ul>
+</section>
 </section>
 <section id="scatter-plot">
 <span id="vis-scatter-plot"></span><h2>Scatter plot<a class="headerlink" href="#scatter-plot" title="Permalink to this heading">#</a></h2>
@@ -577,8 +579,9 @@ we can take look at data by looking at first 5 rows of it using <code class="doc
 <li><p>the position of a point depends on its two-dimensional value, where each value is a position on either the horizontal or vertical dimension</p></li>
 <li><p>scatter plots are used to observe relationships between variables</p></li>
 </ul>
+</section>
 <section id="using-matplotlib">
-<h3>using matplotlib<a class="headerlink" href="#using-matplotlib" title="Permalink to this heading">#</a></h3>
+<h2>using matplotlib<a class="headerlink" href="#using-matplotlib" title="Permalink to this heading">#</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>if you are using Jupyter notebook as your IDE, you can skip <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> and the plot will be displayed automatically</p>
@@ -632,7 +635,6 @@ we can take look at data by looking at first 5 rows of it using <code class="doc
 <img alt="_images/8cfd3fc83baee885fd7f6b10654524295526e6c69f39b582f511cca613b18a80.png" src="_images/8cfd3fc83baee885fd7f6b10654524295526e6c69f39b582f511cca613b18a80.png" />
 </div>
 </div>
-</section>
 <section id="using-style-class">
 <h3>using style=’class’<a class="headerlink" href="#using-style-class" title="Permalink to this heading">#</a></h3>
 <p>style in seaborn Grouping variable that will produce points with different markers. Can have a numeric dtype but will always be treated as categorical.
@@ -663,7 +665,7 @@ for example lets plot this  data in mpg based on their car classes</p>
 <p>this way you can see the difference between the <code class="docutils literal notranslate"><span class="pre">classes</span></code> and based on <code class="docutils literal notranslate"><span class="pre">hue</span></code></p>
 </section>
 <section id="what-is-hue">
-<h3>what is <code class="docutils literal notranslate"><span class="pre">hue</span></code><a class="headerlink" href="#what-is-hue" title="Permalink to this heading">#</a></h3>
+<span id="visual-hue"></span><h3>what is <code class="docutils literal notranslate"><span class="pre">hue</span></code><a class="headerlink" href="#what-is-hue" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">hue</span></code> is a parameter in seaborn scatter plot that is used to Grouping variable that will produce points with different colors. Can be either categorical or numeric, although color mapping will behave differently in latter case.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -681,9 +683,8 @@ for example lets make them orange</p>
 <p>sns.scatterplot(data=mpg, x=’displ’, y=’hwy’, color=’orange’)
 plt.show()</p>
 </section>
-</section>
 <section id="sns-facetgrid">
-<h2>sns.facetgrid<a class="headerlink" href="#sns-facetgrid" title="Permalink to this heading">#</a></h2>
+<h3>sns.facetgrid<a class="headerlink" href="#sns-facetgrid" title="Permalink to this heading">#</a></h3>
 <p>facetgrid is a Multi-plot grid for plotting conditional relationships. This class maps a dataset onto multiple axes arrayed in a grid of rows and columns that correspond to levels of variables in the dataset. The plots it produces are often called “lattice”, “trellis”, or “small-multiple” graphics.
 It can also represent levels of a third variable with the <code class="docutils literal notranslate"><span class="pre">hue</span></code> parameter, which plots different subsets of data in different colors.</p>
 <div class="cell docutils container">
@@ -734,7 +735,7 @@ It can also represent levels of a third variable with the <code class="docutils 
 <p>Overall, this code generates a grid of scatter plots where each subplot represents a different combination of ‘drv’ and ‘cyl’ values from the ‘mpg’ dataset. The scatter plots in each subplot show the relationship between ‘displ’ (engine displacement) on the x-axis and ‘hwy’ (highway miles per gallon) on the y-axis for the corresponding ‘drv’ and ‘cyl’ values.</p>
 </section>
 <section id="scatter-plot-drv-vs-cyl">
-<h2>Scatter Plot: drv vs. cyl<a class="headerlink" href="#scatter-plot-drv-vs-cyl" title="Permalink to this heading">#</a></h2>
+<h3>Scatter Plot: drv vs. cyl<a class="headerlink" href="#scatter-plot-drv-vs-cyl" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mpg</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;drv&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;cyl&#39;</span><span class="p">)</span>
@@ -747,6 +748,7 @@ It can also represent levels of a third variable with the <code class="docutils 
 </div>
 </div>
 <p>In this part of the code, a scatter plot is generated using the seaborn library. The function sns.scatterplot creates a scatter plot with ‘drv’ (drive type) on the x-axis and ‘cyl’ (number of cylinders) on the y-axis, using the ‘mpg’ dataset. The plot is displayed using <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>.</p>
+</section>
 <section id="creating-a-facet-grid-plot-with-drv-on-the-rows-and-cyl-on-the-columns">
 <h3>Creating a facet grid plot with drv on the rows and cyl on the columns<a class="headerlink" href="#creating-a-facet-grid-plot-with-drv-on-the-rows-and-cyl-on-the-columns" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
@@ -765,9 +767,8 @@ It can also represent levels of a third variable with the <code class="docutils 
 <p>The function <code class="docutils literal notranslate"><span class="pre">sns.FacetGrid</span></code> initializes a grid object <code class="docutils literal notranslate"><span class="pre">g</span></code> with rows determined by the unique values in the ‘drv’ column and columns determined by the unique values in the ‘cyl’ column of the ‘mpg’ dataset.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">g.map_dataframe</span></code> function is used to map scatter plots onto each cell of the facet grid, with ‘drv’ on the x-axis and ‘cyl’ on the y-axis. The <code class="docutils literal notranslate"><span class="pre">g.add_legend()</span></code> function adds a legend to the grid, and the plot is displayed using <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>.</p>
 </section>
-</section>
 <section id="seaborn-lmplot">
-<h2>seaborn.lmplot<a class="headerlink" href="#seaborn-lmplot" title="Permalink to this heading">#</a></h2>
+<h3>seaborn.lmplot<a class="headerlink" href="#seaborn-lmplot" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">lmplot</span></code> is a function in seaborn that is used to draw a scatter plot of two variables with a linear regression line. This function combines <code class="docutils literal notranslate"><span class="pre">regplot()</span></code> and <code class="docutils literal notranslate"><span class="pre">FacetGrid</span></code>. It is intended as a convenient interface to fit regression models across conditional subsets of a dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -777,12 +778,12 @@ It can also represent levels of a third variable with the <code class="docutils 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8dc86d2d59a28b19fbebafd0afc093209938bbca02a26333c6221da20860ace9.png" src="_images/8dc86d2d59a28b19fbebafd0afc093209938bbca02a26333c6221da20860ace9.png" />
+<img alt="_images/1330fa03f09fe350b254ee49a3c986cfc5f6df66700dd735414500e45fdb7e33.png" src="_images/1330fa03f09fe350b254ee49a3c986cfc5f6df66700dd735414500e45fdb7e33.png" />
 </div>
 </div>
 <p>as we already used <code class="docutils literal notranslate"><span class="pre">hue</span></code>. lets try use a different markers for this plot.</p>
 <section id="markers">
-<h3>markers<a class="headerlink" href="#markers" title="Permalink to this heading">#</a></h3>
+<h4>markers<a class="headerlink" href="#markers" title="Permalink to this heading">#</a></h4>
 <p>markers is a parameter in seaborn scatter plot that is used to change the markers for different categorical levels of the hue variable. This parameter is only used if hue is a categorical variable.</p>
 <p>markers are usually a list of string or a list of tuples. For example, if the hue variable has three levels, the list of markers should have three elements. If the hue variable has four levels, the list of markers should have four elements, and so on.</p>
 <div class="cell docutils container">
@@ -793,7 +794,7 @@ It can also represent levels of a third variable with the <code class="docutils 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/854a39214b213d03bde1af82c23b8172dcade7129806e3bd9ae749c267a69995.png" src="_images/854a39214b213d03bde1af82c23b8172dcade7129806e3bd9ae749c267a69995.png" />
+<img alt="_images/c5dbbcffee3550b989412bda02b53b16f4e9e60809c600ceed4edfaa614ebf73.png" src="_images/c5dbbcffee3550b989412bda02b53b16f4e9e60809c600ceed4edfaa614ebf73.png" />
 </div>
 </div>
 <p>The code snippet <code class="docutils literal notranslate"><span class="pre">markers=[&quot;o&quot;,</span> <span class="pre">&quot;s&quot;,</span> <span class="pre">&quot;d&quot;]</span></code> is used to customize the marker styles in a scatter plot.</p>
@@ -811,10 +812,11 @@ It can also represent levels of a third variable with the <code class="docutils 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d6c305ba93b1967e68a541e12a4014a8f57634644ad265e6bfae7c0b588bf6ad.png" src="_images/d6c305ba93b1967e68a541e12a4014a8f57634644ad265e6bfae7c0b588bf6ad.png" />
+<img alt="_images/2eac4257dd3b4867e5667b511917d08d3d3a7b59929cc8081bf9d2c181511cdc.png" src="_images/2eac4257dd3b4867e5667b511917d08d3d3a7b59929cc8081bf9d2c181511cdc.png" />
 </div>
 </div>
 <p>following code The plot shows a scatter plot of individual data points, and a linear regression line is fitted through the data points to show the general trend.</p>
+</section>
 </section>
 <section id="bar-charts">
 <h3>Bar charts<a class="headerlink" href="#bar-charts" title="Permalink to this heading">#</a></h3>
@@ -1083,7 +1085,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\khoda\AppData\Local\Temp\ipykernel_2704\2723310808.py:1: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\khoda\AppData\Local\Temp\ipykernel_8424\2723310808.py:1: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -1307,25 +1309,27 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-of-visualizing-using-python">goal of visualizing using python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">matplotlib</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">seaborn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">libraries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">matplotlib</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn">seaborn</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-libraries">installing libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-datset-to-work-with">importing datset to work with</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-of-mpg">MetaData of mpg</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter plot</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-matplotlib">using matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-datset-to-work-with">importing datset to work with</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-of-mpg">MetaData of mpg</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-matplotlib">using matplotlib</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-style-class">using style=’class’</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-hue">what is <code class="docutils literal notranslate"><span class="pre">hue</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sns-facetgrid">sns.facetgrid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot-drv-vs-cyl">Scatter Plot: drv vs. cyl</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sns-facetgrid">sns.facetgrid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot-drv-vs-cyl">Scatter Plot: drv vs. cyl</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-facet-grid-plot-with-drv-on-the-rows-and-cyl-on-the-columns">Creating a facet grid plot with drv on the rows and cyl on the columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn-lmplot">seaborn.lmplot</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#markers">markers</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn-lmplot">seaborn.lmplot</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#markers">markers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-charts">Bar charts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#styling-box-plot">styling box plot</a></li>
 </ul>
