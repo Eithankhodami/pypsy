@@ -152,14 +152,19 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to pyPsy
+                    <no title>
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Notice.html">Legal Notice and Usage</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">basics of Python</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basicsprobabilties.html">Random experiments</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="mean.html">Mean</a></li>
 </ul>
 
     </div>
@@ -306,8 +311,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">basics of Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing">Printing</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-data-types">Variables and data types</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers-in-python">Numbers in python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-int-and-float">Differences between int and float</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-string">What is string?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -322,7 +342,7 @@ document.write(`
 <h1>basics of Python<a class="headerlink" href="#basics-of-python" title="Permalink to this heading">#</a></h1>
 <p>This section gives you basics of Python, if you don’t have any background you should learn, otherwise, you can skip this part</p>
 <section id="printing">
-<h2>Printing<a class="headerlink" href="#printing" title="Permalink to this heading">#</a></h2>
+<span id="var-print"></span><h2>Printing<a class="headerlink" href="#printing" title="Permalink to this heading">#</a></h2>
 <p>We use <code class="docutils literal notranslate"><span class="pre">print()</span></code> function to print the output of our code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -351,6 +371,223 @@ The same for strings, if you use ‘ ‘ for a string and inside the string you 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span>
 </pre></div>
 </div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="variables-and-data-types">
+<h1>Variables and data types<a class="headerlink" href="#variables-and-data-types" title="Permalink to this heading">#</a></h1>
+<section id="numbers-in-python">
+<h2>Numbers in python<a class="headerlink" href="#numbers-in-python" title="Permalink to this heading">#</a></h2>
+<p>numbers in python are immutable, so we can’t change them. numbers in python are divieded into two types: int and float.
+int is a whole number, and float is a number with decimal point.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>we can use type() to check the type of a variable.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">2.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>now let’s check their type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<p>as you can see, <code class="docutils literal notranslate"><span class="pre">a</span></code> is an integer and <code class="docutils literal notranslate"><span class="pre">b</span></code> is a float number.</p>
+<section id="differences-between-int-and-float">
+<h3>Differences between int and float<a class="headerlink" href="#differences-between-int-and-float" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Type: ints are integers (whole numbers), while floats are floating point numbers (decimals).</p></li>
+<li><p>Precision: ints have unlimited precision, while floats are approximations with limited precision due to how they are stored in memory.</p></li>
+<li><p>Value range: ints can represent all whole numbers without limit, while floats have a maximum and minimum value.</p></li>
+<li><p>Division: Division with ints always results in an int, while division with floats results in a float.</p></li>
+<li><p>Declaration: ints are declared simply as integers, while floats must have a decimal point and/or be declared with float().
+Memory: ints take up 4 bytes in memory, while floats take up 8 bytes.
+Usage: ints are used for counting and exact values, while floats are used for measurements and approximations.</p></li>
+</ul>
+<p>what if we multiply an <code class="docutils literal notranslate"><span class="pre">int</span></code> with a <code class="docutils literal notranslate"><span class="pre">float</span></code>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<p>as it can be seen, any mathmatical operation of <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> will result in <code class="docutils literal notranslate"><span class="pre">float</span></code></p>
+<p>you can change type of <code class="docutils literal notranslate"><span class="pre">int</span></code> to <code class="docutils literal notranslate"><span class="pre">float</span></code> by using <code class="docutils literal notranslate"><span class="pre">float()</span></code> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can we covert a <code class="docutils literal notranslate"><span class="pre">float</span></code> to <code class="docutils literal notranslate"><span class="pre">int</span></code>? Yes, we can. But we will lose the decimal part.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.9999</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>to recap:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">float(a)</span></code> converts <code class="docutils literal notranslate"><span class="pre">a</span></code> as if it is a integer to a float number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int(a)</span></code> converts <code class="docutils literal notranslate"><span class="pre">a</span></code> as if it is a float number to an integer</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h2>
+<section id="what-is-string">
+<h3>What is string?<a class="headerlink" href="#what-is-string" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>String is a sequence of characters.</p></li>
+<li><p>String is a data type in python.</p></li>
+<li><p>String is immutable.</p></li>
+<li><p>String is a sequence of Unicode characters.</p></li>
+</ul>
+<p>to show the string we use single quote or double quote.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;this is a string&#39;</span>
+<span class="s2">&quot;this is also a string&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;this is also a string&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>if we wan to show a string, we use <a class="reference internal" href="#var-print"><span class="std std-ref">print</span></a> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is a string&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is also a string&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a string
+This is also a string
+</pre></div>
+</div>
+</div>
+</div>
+<p>we also can use “”” “”” to comment multiple lines</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This is a multi line</span>
+<span class="sd">comment in python</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nThis is a multi line\ncomment in python\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>as you can see, while we <code class="docutils literal notranslate"><span class="pre">print</span></code> the multi-line, python use <code class="docutils literal notranslate"><span class="pre">\n</span></code> to separate the lines. This can be used also with single <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> or double <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> quotes.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is</span><span class="se">\n</span><span class="s2"> a string which issplit over</span><span class="se">\n</span><span class="s2"> several lines&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is
+ a string which issplit over
+ several lines
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>we can also use <code class="docutils literal notranslate"><span class="pre">\t</span></code> to add a tab space</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is a </span><span class="se">\t</span><span class="s2"> tabbed string&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a 	 tabbed string
+</pre></div>
+</div>
+</div>
+</div>
+<p>we can use <code class="docutils literal notranslate"><span class="pre">+</span></code> to add two strings together</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stringOne</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="n">stringTwo</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stringOne</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">stringTwo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -421,8 +658,23 @@ The same for strings, if you use ‘ ‘ for a string and inside the string you 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">basics of Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing">Printing</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-and-data-types">Variables and data types</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers-in-python">Numbers in python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-int-and-float">Differences between int and float</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-string">What is string?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

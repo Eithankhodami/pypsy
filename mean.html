@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Legal Notice and Usage &#8212; Python for Psychologists and Neuroscientists</title>
+    <title>Mean &#8212; Python for Psychologists and Neuroscientists</title>
   
   
   
@@ -61,11 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Notice';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'mean';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="basics of Python" href="pythonBasic1.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="intro.html" />
+    <link rel="prev" title="Random experiments" href="basicsprobabilties.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,14 +158,14 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Legal Notice and Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notice.html">Legal Notice and Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pythonBasic1.html">basics of Python</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basicsprobabilties.html">Random experiments</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="mean.html">Mean</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mean</a></li>
 </ul>
 
     </div>
@@ -219,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Notice.md" target="_blank"
+      <li><a href="_sources/mean.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -229,7 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -301,7 +302,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Legal Notice and Usage</h1>
+    <h1>Mean</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -311,8 +312,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-history">Update History:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author">Author:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-mean">What is Mean?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-in-python-using-numpy">Mean in python using numpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-it">How to use it?</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -324,35 +328,95 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="legal-notice-and-usage">
-<h1>Legal Notice and Usage<a class="headerlink" href="#legal-notice-and-usage" title="Permalink to this heading">#</a></h1>
-<section id="update-history">
-<h2>Update History:<a class="headerlink" href="#update-history" title="Permalink to this heading">#</a></h2>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 1.0.0: </span></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="mean">
+<h1>Mean<a class="headerlink" href="#mean" title="Permalink to this heading">#</a></h1>
+<section id="what-is-mean">
+<h2>What is Mean?<a class="headerlink" href="#what-is-mean" title="Permalink to this heading">#</a></h2>
+<p>The mean is the average of the numbers. It is easy to calculate: add up all the numbers, then divide by how many numbers there are. In other words it is the sum divided by the count.</p>
+<p>the formula for calculating the mean is:</p>
+<div class="math notranslate nohighlight" id="equation-my-math-mean">
+<span class="eqno">(1)<a class="headerlink" href="#equation-my-math-mean" title="Permalink to this equation">#</a></span>\[\bar{x} = \frac{1}{n}\sum_{i=1}^{n}x_i  \]</div>
+<p>where:</p>
 <ul class="simple">
-<li><p>Basics of Python added.</p></li>
-<li><p>style is edited</p></li>
-<li><p>minor changes in codes</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{x}\)</span> is the mean</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> is the number of items in the set</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span> is the ith item in the set</p></li>
 </ul>
-</div>
-<font color="red">
-This course is to provide valuable content for those who do not have enough background in data analysis, especially with a psychological point of view or expertise to coverup the course material has been conducted based on data from the internet which is free to download, or if any data is explicitly used, the source is mentioned.
-<p>Content is <strong>FREE</strong> to use, reproduce, modify or share, but the author is not responsible for any damage or loss of data or other issues.</p>
-<p>You can mention the authors or link to this page to use the content.
-</font></p>
-<hr>
+<p>This formula calculates the average of a set of numbers. To calculate the mean, you add up all the numbers in the set and divide by the total number of observations. The result is the mean.</p>
 </section>
-<section id="author">
-<h2>Author:<a class="headerlink" href="#author" title="Permalink to this heading">#</a></h2>
-<p>This course content is created by “<a class="reference external" href="https://khodami.me">Mohammad Ahsan Khodami</a>”.</p>
-<p>for more information please contact:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="mailto:mohammadahsan&#46;khodami&#37;&#52;&#48;phd&#46;unipd&#46;it">Email</a></p></li>
-<li><p><a class="reference external" href="https://khodami.me">Website</a></p></li>
-<li><p><a class="reference external" href="https://www.linkedin.com/in/mohammadahsankhodami/">LinkedIn</a></p></li>
-<li><p><a class="reference external" href="https://twitter.com/eithan_kh">Twitter</a></p></li>
-</ul>
+<section id="mean-in-python-using-numpy">
+<h2>Mean in python using numpy<a class="headerlink" href="#mean-in-python-using-numpy" title="Permalink to this heading">#</a></h2>
+<p>but in python we have an easy way to calculate mean using the numpy library. The numpy library has a function called <code class="docutils literal notranslate"><span class="pre">mean()</span></code> which takes a list as an argument and returns the mean of the list.</p>
+<p>to use the numpy library we have to import it first using the following procedure:</p>
+<section id="how-to-use-it">
+<h3>How to use it?<a class="headerlink" href="#how-to-use-it" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>open the python or your favorite IDE</p></li>
+<li><p>type the following command in the python shell or in the IDE</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>now you can use the numpy library by typing the following command</p></li>
+</ol>
+<p>let’s Assume you don’t have data, so we can create a random data using another command of <code class="docutils literal notranslate"><span class="pre">numpy</span></code> named <code class="docutils literal notranslate"><span class="pre">random</span></code>. Later we discuss <code class="docutils literal notranslate"><span class="pre">random</span></code> in detail, but for now let’s use it to create a random data.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">random</span></code> is a module which create random numbers. <code class="docutils literal notranslate"><span class="pre">random.random()</span></code> returns a random floating point number in the range [0.0, 1.0). aldom <code class="docutils literal notranslate"><span class="pre">random.randint(a,</span> <span class="pre">b)</span></code> returns a random integer N such that a &lt;= N &lt;= b.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>if you use random function, each time you run the code, you will get different result. to solve this problem you have to use seed function.</p>
+</div>
+<p>lets cretae a random numbers and calculate the mean of them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>here we created 64 random numbers between 1 and 100. let’s take a look at it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([45, 48, 65, 68, 68, 10, 84, 22, 37, 88, 71, 89, 89, 13, 59, 66, 40,
+       88, 47, 89, 82, 38, 26, 78, 73, 10, 21, 81, 70, 80, 48, 65, 83, 89,
+       50, 30, 20, 20, 15, 40, 33, 66, 10, 58, 33, 32, 75, 24, 36, 76, 56,
+       29, 35,  1,  1, 37, 54,  6, 39, 18, 80,  5, 43, 59])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">random.randint(x,</span> <span class="pre">y)</span></code> returns a list of numbers. The first argument is the lower bound and the second argument is the upper bound. The upper bound is not included in the list.</p>
+</div>
+<p>now let’s calculate mean of numbers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48.609375
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -388,22 +452,13 @@ This course is to provide valuable content for those who do not have enough back
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="basicsprobabilties.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Random experiments</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="pythonBasic1.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">basics of Python</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -423,8 +478,11 @@ This course is to provide valuable content for those who do not have enough back
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-history">Update History:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author">Author:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-mean">What is Mean?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-in-python-using-numpy">Mean in python using numpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-it">How to use it?</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

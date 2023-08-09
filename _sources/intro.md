@@ -1,4 +1,9 @@
-# Welcome to pyPsy
+# Home
+
+
+![logo](logo.png)
+
+## Welcome to pyPsy
 
 **pyPsy** is a book based on [Python](https://python.org) for Psychologists, Neuroscientists, and those interested in learning Python in advanced form. Python is a popular programming language for scientific computing and data analysis. Compared to other languages like R and Matlab, Python offers several advantages:
 
